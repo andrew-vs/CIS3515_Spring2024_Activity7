@@ -18,7 +18,7 @@ class TextSizeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Create array of integers that are multiples of 5
-        // Verify correctness by examining array values.
+        // Verify correctness by examining array value.
         val textSizes = Array(20){(it + 1) * 5}
 
         Log.d("Array values", textSizes.contentToString())
