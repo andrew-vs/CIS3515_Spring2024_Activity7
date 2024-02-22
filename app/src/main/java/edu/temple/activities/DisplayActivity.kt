@@ -10,7 +10,7 @@ class DisplayActivity : AppCompatActivity() {
 
     //  Step 1: Launch TextSizeActivity when button clicked to allow selection of text size value
 
-    //  Step 3: Use returned value for lyricsDisplayTextView text size
+    //  Step 3: Use returned value for lyricsDisplayTextView size
 
     private lateinit var lyricsDisplayTextView: TextView
     private lateinit var textSizeSelectorButton: Button
