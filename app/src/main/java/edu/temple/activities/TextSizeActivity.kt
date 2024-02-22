@@ -1,5 +1,6 @@
 package edu.temple.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+
+const val MESSAGE_KEY = "value"
 
 class TextSizeActivity : AppCompatActivity() {
 
@@ -22,9 +25,11 @@ class TextSizeActivity : AppCompatActivity() {
 
         with (findViewById(R.id.textSizeSelectorRecyclerView) as RecyclerView) {
 
-            // TODO Step 2: Pass selected value back to activity that launched TextSizeActivity
+            // Pass selected value back to activity that launched TextSizeActivity
             adapter = TextSizeAdapter(textSizes){
-
+                val launchIntent = Intent(this@TextSizeActivity, DisplayActivity::class.java)
+                launchIntent.putExtra(MESSAGE_KEY, it.toString())
+                startActivity(launchIntent)
             }
             layoutManager = LinearLayoutManager(this@TextSizeActivity)
         }
@@ -60,11 +65,3 @@ class TextSizeAdapter (private val textSizes: Array<Int>, private val callback: 
     }
 
 }
-
-
-
-
-
-
-
-
